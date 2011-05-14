@@ -13,18 +13,19 @@ col = position(2);
 
 board = play( board, whosTurn, row, col );
 
-whosTurn = whosTurn + 1;
-if (whosTurn > 2)
-    whosTurn = 1;
+switchTurn;
+
+if (type ~= TYPE.HUMAN_VS_HUMAN)
+    computersMove;
 end
 
-winner = checkForWin(board);
+winner = findWinner(board);
 if (winner)
     wins(winner) = wins(winner) + 1;
     fprintf('We have a winner: %i\n', winner);
     
     clear = true;
-    updateScoreboard;
+    updateScoreboard(wins(1), wins(2), ties);
     return;
 end
 
@@ -34,6 +35,6 @@ if (nnz(board) == prod(size(board)))
     disp('We have a tie!');
     
     clear = true;
-    updateScoreboard;
+    updateScoreboard(wins(1), wins(2), ties);
     return;
 end

@@ -1,4 +1,4 @@
-function [ winner ] = checkForWin( board )
+function [ winner ] = findWinner( board )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 

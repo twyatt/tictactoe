@@ -1,3 +1,8 @@
+global TYPE;
+TYPE = struct('HUMAN_VS_HUMAN', 1, 'EASY', 2, 'MODERATE', 3, 'HARD', 4);
+
+type = TYPE.HUMAN_VS_HUMAN;
+
 % set player 1 to go first
 whosTurn = 1;
 
