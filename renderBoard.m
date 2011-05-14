@@ -14,13 +14,10 @@ for m = 1 : size(board, 1)
         
         if (state == 0)
             char = '';
-            enable = 'on';
         else
             char = players(state);
-            enable = 'off';
         end
         
-        %set(square, 'Enable', enable);
         set(square, 'String', char);
     end
 end
