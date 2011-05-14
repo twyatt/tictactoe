@@ -1,0 +1,1 @@
+openfig('highScores');

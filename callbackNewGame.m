@@ -1,0 +1,1 @@
+startVsComputerGame( DIFFICULTY.EASY );
