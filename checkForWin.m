@@ -22,6 +22,14 @@ for n = 1 : size(board, 2)
     end
 end
 
-% TODO: check diagonals for wins
+% check diagonals for wins
+player = same(diag(board));
+if (player)
+    winner = player;
+end
+player = same(diag(rot90(board)));
+if (player)
+    winner = player;
+end
 
 end

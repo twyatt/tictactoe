@@ -20,7 +20,7 @@ for m = 1 : size(board, 1)
             enable = 'off';
         end
         
-        set(square, 'Enable', enable);
+        %set(square, 'Enable', enable);
         set(square, 'String', char);
     end
 end
