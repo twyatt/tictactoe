@@ -1,16 +1,16 @@
-function [ output_args ] = syncBoardToGameState( gameState )
+function [ output_args ] = renderBoard( board )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
-disp('Syncronizing board to game state: ');
-disp(gameState);
+disp('Rendering board data: ');
+disp(board);
 
 players = ['X', 'O'];
 
-for m = 1 : size(gameState, 1)
-    for n = 1 : size(gameState, 2)
-        state = gameState(m, n);
-        square = getSquareAt(m, n);
+for m = 1 : size(board, 1)
+    for n = 1 : size(board, 2)
+        state = board(m, n);
+        square = getHandleForSquareAt(m, n);
         
         if (state == 0)
             char = '';

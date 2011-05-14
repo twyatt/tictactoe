@@ -1,4 +1,4 @@
-function [ handle ] = getSquareAt( m, n )
+function [ handle ] = getHandleForSquareAt( m, n )
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 

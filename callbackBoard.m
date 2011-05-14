@@ -5,4 +5,9 @@ position = get(gcbo, 'UserData');
 row = position(1);
 col = position(2);
 
-gameState = play( gameState, whosTurn, row, col );
+board = play( board, whosTurn, row, col );
+
+whosTurn = whosTurn + 1;
+if (whosTurn > 2)
+    whosTurn = 1;
+end
