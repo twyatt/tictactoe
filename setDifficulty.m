@@ -18,3 +18,5 @@ elseif (difficulty == 3)
     type = TYPE.HARD;
     setPlayerName(2, 'Hard');
 end
+
+clear difficulty; % clean up
