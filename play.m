@@ -8,7 +8,6 @@ if (board(m, n))
 end
 
 board(m, n) = player;
-renderBoard(board);
 
 end
 

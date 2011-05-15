@@ -18,7 +18,7 @@ elseif (type == TYPE.MODERATE)
     
 elseif (type == TYPE.HARD)
     
-    [score, board] = minimax(whosTurn, board);
+    [score, board] = minimax(whosTurn, board, -inf, inf)
     clear score; % clean up
     
 end

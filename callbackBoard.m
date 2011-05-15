@@ -17,8 +17,12 @@ clear position row col; % clean up
 switchTurn;
 
 if (type ~= TYPE.HUMAN_VS_HUMAN)
-    computersMove;
+    if (nnz(board) < prod(size(board))) % insure that the board is not full
+        computersMove;
+    end
 end
+
+renderBoard(board);
 
 winner = findWinner(board);
 if (winner)
