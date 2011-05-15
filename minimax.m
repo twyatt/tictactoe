@@ -2,6 +2,9 @@ function [ score, board ] = minimax( player, board, alpha, beta )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
+%fprintf('minimax(player: %i, alpha: %i, beta: %i):\n', player, alpha, beta);
+%disp(board);
+
 winner = findWinner(board);
 if (winner)
     if (winner == 1)
@@ -24,45 +27,35 @@ end
 
 children = boardChildren(other, board);
 
-if (player == 1)
+for i = 1 : size(children, 3)
+    child = children(:, :, i);
+    [score, dummy] = minimax( other, child, alpha, beta );
     
-    for i = 1 : size(children, 3)
-        child = children(:, :, i);
-        [score, dummy] = minimax( other, child, alpha, beta );
+    if (player == 1)
         if (score > alpha)
             alpha = score;
-        end
-        if (alpha >= beta)
             board = child;
-            score = alpha;
-            return;
+            
+            if (alpha >= beta)
+                break;
+            end
         end
-    end
-    
-    %board = dummy;
-    score = alpha;
-    return;
-    
-elseif (player == 2)
-    
-    for i = 1 : size(children, 3)
-        child = children(:, :, i);
-        [score, dummy] = minimax( other, child, alpha, beta );
+    elseif (player == 2)
         if (score < beta)
             beta = score;
-        end
-        if (alpha >= beta)
             board = child;
-            score = beta;
-            return;
+            
+            if (alpha >= beta)
+                break;
+            end
         end
     end
-    
-    %board = dummy;
+end
+
+if (player == 1)
     score = beta;
-    return;
-    
+elseif (player == 2)
+    score = alpha;
 end
 
 end
-
