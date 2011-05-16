@@ -13,7 +13,6 @@ position = get(gcbo, 'UserData');
 row = position(1);
 col = position(2);
 
-%board = play( board, whosTurn, row, col );
 if (board(row, col))
     return;
 end
@@ -37,8 +36,7 @@ if (winner)
     fprintf('We have a winner: %i\n', winner);
     gameOver;
     
-% check for a tie
-elseif ( boardIsFull(board) )
+elseif ( boardIsFull(board) ) % check for a tie
 
     ties = ties + 1;
     disp('We have a tie!');
