@@ -1,3 +1,4 @@
+closePlayerNames;
 newGame;
 
 set(findobj('Tag', 'menuTypeHumanVsHuman'), 'Checked', 'off');
