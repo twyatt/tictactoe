@@ -15,7 +15,8 @@ if (type == TYPE.EASY)
     
 elseif (type == TYPE.MODERATE)
     
-    % perform block or random move
+    
+    % TODO: perform block or random move
     
 elseif (type == TYPE.HARD)
     

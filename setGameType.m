@@ -1,4 +1,4 @@
-initGame;
+newGame;
 
 set(findobj('Tag', 'menuTypeHumanVsHuman'), 'Checked', 'off');
 set(findobj('Tag', 'menuTypeEasy'),         'Checked', 'off');

@@ -1,6 +1,8 @@
 % set focus to a hidden push button to remove ugly dotted focus borders
 setfocus(findobj('Tag', 'hackPushButton'));
 
+closePlayerNames;
+
 if (clearBoardOnNextClick)
     clearBoardOnNextClick = false;
     clearBoard;
@@ -21,7 +23,7 @@ clear position row col; % clean up
 switchTurn;
 
 if (type ~= TYPE.HUMAN_VS_HUMAN)
-    if ( ~boardIsFull(board) ) % insure that the board is not full
+    if ( ~findWinner(board) && ~boardIsFull(board) ) % insure that the board is not full
         computersMove;
     end
 end
