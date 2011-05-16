@@ -1,3 +1,5 @@
+% TODO: seed random number generator
+
 global TYPE;
 TYPE = struct('HUMAN_VS_HUMAN', 1, 'EASY', 2, 'MODERATE', 3, 'HARD', 4);
 
@@ -11,5 +13,5 @@ ties = 0;
 
 clearBoardOnNextClick = false; % boolean to have next click clear the game board
 
-clearGameBoard;
-updateScoreboard(wins(1), wins(2), ties);
+clearBoard;
+scoreboardUpdate(wins(1), wins(2), ties);

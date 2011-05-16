@@ -8,7 +8,8 @@ if (type == TYPE.EASY)
     col = available(index, 2);
     
     fprintf('Computer playing at [%i, %i].\n', row, col);
-    board = play( board, whosTurn, row, col );
+    %board = play( board, whosTurn, row, col );
+    board(row, col) = whosTurn;
     
     clear m n index row col; % clean up
     

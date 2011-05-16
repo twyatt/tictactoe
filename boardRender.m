@@ -1,4 +1,4 @@
-function [ output_args ] = renderBoard( board )
+function [ output_args ] = boardRender( board )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 

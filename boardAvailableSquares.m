@@ -1,4 +1,4 @@
-function [ available ] = availableSquaresOnBoard( board )
+function [ available ] = boardAvailableSquares( board )
 %UNTITLED4 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -6,4 +6,3 @@ function [ available ] = availableSquaresOnBoard( board )
 available = [m, n];
 
 end
-

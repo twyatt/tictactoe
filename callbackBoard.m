@@ -3,7 +3,7 @@ setfocus(findobj('Tag', 'hackPushButton'));
 
 if (clearBoardOnNextClick)
     clearBoardOnNextClick = false;
-    clearGameBoard;
+    clearBoard;
     return;
 end
 
@@ -11,9 +11,11 @@ position = get(gcbo, 'UserData');
 row = position(1);
 col = position(2);
 
-% TODO: check that square hasn't already been played, if so then "return"
-% to prevent switchTurn, etc
-board = play( board, whosTurn, row, col );
+%board = play( board, whosTurn, row, col );
+if (board(row, col))
+    return;
+end
+board(row, col) = whosTurn;
 clear position row col; % clean up
 
 switchTurn;
@@ -24,7 +26,7 @@ if (type ~= TYPE.HUMAN_VS_HUMAN)
     end
 end
 
-renderBoard(board);
+boardRender(board);
 
 winner = findWinner(board);
 if (winner)

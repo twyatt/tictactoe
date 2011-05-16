@@ -1,4 +1,4 @@
-function [ output_args ] = updateScoreboard(player1Wins, player2Wins, ties)
+function [ output_args ] = scoreboardUpdate(player1Wins, player2Wins, ties)
 
 % TODO: save to file
 
