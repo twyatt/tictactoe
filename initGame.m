@@ -1,4 +1,4 @@
-% TODO: seed random number generator
+rand('seed', 1000 * sum(clock));
 
 global TYPE;
 TYPE = struct('HUMAN_VS_HUMAN', 1, 'EASY', 2, 'MODERATE', 3, 'EXPERT', 4);
