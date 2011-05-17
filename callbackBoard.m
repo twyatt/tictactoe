@@ -16,6 +16,9 @@ col = position(2);
 if (board(row, col)) % prevent playing an already taken square
     return;
 end
+
+wavplay(clickWav, clickFreq, 'async');
+
 activateUndo;
 board(row, col) = whosTurn;
 clear position row col; % clean up
@@ -36,6 +39,15 @@ if (winner)
     
     wins(winner) = wins(winner) + 1;
     fprintf('We have a winner: %i\n', winner);
+    
+    if (type ~= TYPE.HUMAN_VS_HUMAN)
+        if (winner == 1)
+            wavplay(winWav, winFreq, 'async');
+        else
+            wavplay(loseWav, loseFreq, 'async');
+        end
+    end
+    
     gameOver;
     
 elseif ( boardIsFull(board) ) % check for a tie

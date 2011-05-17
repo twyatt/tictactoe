@@ -1,4 +1,4 @@
-if (~boardIsFull(board))
+if (~boardIsFull(board) && ~findWinner(board))
     [score, temp] = minimax(whosTurn, board, -inf, inf);
     hint = temp - board;
     [m, n] = find(hint ~= 0);
