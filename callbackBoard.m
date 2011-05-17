@@ -28,6 +28,7 @@ if (type ~= TYPE.HUMAN_VS_HUMAN)
 end
 
 boardRender(board);
+boardColor(board);
 
 winner = findWinner(board);
 if (winner)
