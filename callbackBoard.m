@@ -13,9 +13,10 @@ position = get(gcbo, 'UserData');
 row = position(1);
 col = position(2);
 
-if (board(row, col))
+if (board(row, col)) % prevent playing an already taken square
     return;
 end
+activateUndo;
 board(row, col) = whosTurn;
 clear position row col; % clean up
 
