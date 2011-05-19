@@ -1,2 +1,1 @@
-%openfig('instructions.fig');
-disp('Not yet implemented.');
+openfig('instructions.fig');
